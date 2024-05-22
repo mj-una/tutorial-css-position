@@ -1,0 +1,41 @@
+html {
+	color: rgb(165, 42, 42);
+	background-color:	 rgb(0, 255, 60)
+}
+
+body {
+	background-color: rgb(0, 238, 255);
+	max-width: 400px;
+	margin: 8px auto;
+	padding: 12px;
+}
+
+.rect {
+	width: 200px;
+	height: 400px;
+	margin: 5px 0;
+	background-color: rgb(43, 43, 226);
+}
+
+.cuad {
+	width: 200px;
+	height: 200px;
+	margin: 5px 0;
+	background-color: rgba(137, 43, 226, 0.829);
+}
+
+.cuad2 {
+	width: 100px;
+	height: 100px;
+	margin-left: 45px;
+	background-color: rgba(226, 43, 186, 0.66);
+}
+
+.cuad3 {
+	width: 30px;
+	height: 30px;
+	background-color: rgba(226, 43, 43, 0.596);
+	position: absolute;
+	top: 15px;
+	left: 30px;
+}
