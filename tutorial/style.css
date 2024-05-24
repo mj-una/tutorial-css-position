@@ -1,0 +1,358 @@
+/*
+
+	25O25
+	mj-una
+	cc0
+
+*/
+
+/* global */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+	
+	--cfp: rgb(255, 235, 205); /* color fondo principal  */
+	--cfs: rgb(240, 248, 255); /* color fondo secundario */
+	--ctp: rgb(30, 16, 27);    /* color texto principal  */
+	--cts: rgb(166, 148, 135); /* color texto secundario */
+
+	--margen: 3vw;
+	--ancho: calc(100vw - 2 * var(--margen));
+
+	--mct: calc(3 * var(--margen)); /* margen caja texto */
+
+	--fsize: clamp(calc(1svh * (5 / 6)), 3vw, calc(3svh * (5 / 6)));
+	font-size: var(--fsize);
+}
+
+html {
+	position: relative;
+
+	background-color: var(--cfp);
+	color: var(--ctp);
+
+	height: 100%;
+
+	scroll-behavior: smooth;
+}
+
+a {
+	text-decoration: none;
+	color: var(--ct);
+}
+
+body {
+	position: static;
+	width: var(--ancho);
+	margin: 0 auto;
+}
+
+@media (min-aspect-ratio: 5 / 6) {
+	:root {
+		--ancho: calc(100svh * (5 / 6));
+	}
+
+	body {
+		max-width: var(--ancho);
+	}
+}
+
+/* tipografia */
+
+.f-regular {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.f-bold {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.f-regular-i {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.f-bold-i {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* _______________________________________________________ */
+
+/* header */
+
+header {
+	position: relative;
+	height: calc(var(--ancho) * 0.9);
+	background-color: var(--cfp);
+}
+
+.aa {
+	position: absolute;
+	top: 3svh;
+	left: calc(var(--ancho) * 0.03);
+	color: var(--cts);
+	transform: rotate(-10deg);
+}
+
+.js {
+	position: absolute;
+	top: 3svh;
+	right: calc(var(--ancho) * 0.03);
+	color: var(--cts);
+	transform: rotate(10deg);
+}
+
+.cara {
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	left: calc(var(--ancho) * 0.2);
+	
+	height: calc(var(--ancho) * 0.6);
+	width: calc(var(--ancho) * 0.6);
+
+	background-image: url("img/cara2.png");
+	background-size: cover;
+	background-position: bottom;
+	background-repeat: no-repeat;
+}
+
+.ojos {
+	position: fixed;
+	top: 1.1svh;
+	z-index: 5;
+	top: 1.2svh;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+
+	height: calc(var(--ancho) * 0.6);
+	width: calc(var(--ancho) * 0.6);
+
+	background-image: url("img/ojos.png");
+	background-size: cover;
+	background-position: bottom;
+	background-repeat: no-repeat;
+}
+
+.titulo {
+	position: absolute;
+	bottom: 2svh;
+	z-index: 4;
+}
+
+h3 {
+	position: relative;
+	top: calc(var(--fsize) * 2);
+	font-size: 5rem;
+}
+
+h1 {
+	font-size: 6rem;
+}
+
+.cortina {
+	position: absolute;
+	bottom: 0;
+	z-index: 14;
+
+	width: 100%;
+	height: calc(var(--ancho) * 0.9);
+	/* background-color: aqua; */
+	background: linear-gradient(to top, var(--cfp) 0%, rgba(0, 0, 0, 0) 23%);
+}
+
+/* _______________________________________________________ */
+
+/* navbar */
+
+.sti-nav {
+	position: sticky;
+	top: 0;
+	z-index: 7;
+
+	/* margin-top: calc(var(--ancho) * 0.04); */
+	padding-top: calc(var(--ancho) * 0.02);
+	background-color: var(--cfp);
+}
+
+nav {
+	position: sticky;
+	top: calc(var(--ancho) * 0.02);
+	z-index: 7;
+	
+	/* padding: calc(var(--ancho) * 0.04); */
+	padding-top: calc(var(--ancho) * 0.04);
+	padding-bottom: calc(var(--ancho) * 0.01);
+	border-radius: calc(var(--ancho) * 0.03) calc(var(--ancho) * 0.03) 0 0;
+
+	background-color: var(--cfs);
+}
+
+nav ul {
+	display: flex;
+	justify-content: space-around;
+}
+
+nav ul li {
+	display: inline-block;
+	font-size: 1.4rem;
+}
+
+/* address */
+
+address {
+	position: relative;
+	top: 0;
+	z-index: 6;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	padding: var(--margen);
+	
+	color: var(--cts);
+	background-color: var(--cfs);
+}
+
+/* section */
+
+section {
+	position: relative;
+	top: 0;
+	z-index: 6;
+
+	padding: var(--margen);
+
+	background-color: var(--cfs);
+}
+
+section h2 {
+	margin-bottom: var(--margen);
+	font-size: 2rem;
+	text-decoration: underline;
+}
+
+article {
+	position: relative;
+	top: 0;
+	z-index: 6;
+
+	background-color: var(--cfp);
+}
+
+
+
+/* boton */
+
+/* #btn-ini {
+	position: absolute;
+	top: 110svh;
+	z-index: 14;
+
+	width: 100%;
+	height: 1000%;
+	
+	display: flex;
+	justify-content: end;
+
+	background-color: var(--cfs);
+}
+
+#btn-ini a {
+	position: sticky;
+	bottom: 90svh;
+	z-index: 14;
+
+	margin-right: var(--mct);
+	padding: var(--margen);
+	font-weight: 700;
+	font-size: 1.4rem;
+	background-color: var(--cfs);
+} */
+
+
+
+/* ||||||||||||||||||||||||||||||||||||||||||| */
+/* ||||||||||||||||||||||||||||||||||||||||||| */
+/* ||||||||||||||||||||||||||||||||||||||||||| */
+
+
+
+
+/* :root {
+	font-size: clamp(10px, 4.5vw, 200px);
+} */
+
+
+
+/* header */
+/* 
+.cara {
+	position: relative;
+	z-index: 0;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+	width: 100vw;
+	height: 100vw;
+
+	background-image: url("img/cara.png");
+	background-size: cover;
+	background-position: bottom;
+	background-repeat: no-repeat;
+} */
+/* 
+.portada {
+	background-image: url("img/meme.jpg");
+	background-size: cover;
+	background-position: bottom;
+	background-repeat: no-repeat;
+	height: 80svh;
+}
+
+address {
+	background-color: blueviolet;
+	height: 10svh;
+	display: flex;
+	justify-content: space-between;
+} */
+
+/* navbar */
+/* 
+nav {
+	background-color: rgb(255, 0, 166);
+	height: 10svh;
+	display: flex;
+	align-items: center;
+	position: sticky;
+	top: 0;
+}
+
+nav ul {
+	margin: 0;
+	padding: 0;
+	width: 100%;	
+	display: flex;
+	justify-content: space-between;
+}
+
+nav ul li {
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+	font-size: 1rem;
+} */
